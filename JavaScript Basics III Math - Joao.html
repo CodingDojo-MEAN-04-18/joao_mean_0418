@@ -1,0 +1,79 @@
+<html>
+    <body>
+        
+        <script>
+
+            // Math 1 //
+            // returns false is any negative number is found in the array //
+            function zero_negativity(x){
+                for(i = 0; i < x.length; i++){
+                    if(x[i] < 0){
+                        return false;
+                    }
+                }
+                return true;
+                    
+            }
+
+            let a = [1,2,3]
+            console.log(zero_negativity(a));
+
+            // Math 2 //
+            // Check if number is even (true) or odd (false) //
+            function is_even(y){
+                if(y % 2 === 0){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+                
+            }
+
+            let b = 10
+            console.log(is_even(b));
+
+            // Math 3 //
+            // Evaluates values in the array and counts the amount of even values found//
+            function howManyEven(z) {
+			let sum = 0;
+			for (let i =0; i < z.length; i++) {
+				if (is_even(z[i])) {
+					sum += 1;
+				}
+			}
+			return sum;
+            }
+
+            let c = [2,4,5,6,8,10,11,13,21]
+            console.log(howManyEven(c));
+
+            // Math 4 //
+            // Function creates dummy array (random) between 0 an 9 for a lenght defined by the function argument //
+            function createDummyArray(w) {
+			const ww = [];
+			for (let i = 0; i < w; i++) {
+				ww.push(Math.floor(Math.random() * 10));
+			}
+			return ww;
+		    }
+
+            let d = 20
+            console.log(createDummyArray(d));
+
+            // Math 5 //
+            // Function returns a random number from the array based on array lenght //
+            function random_choice(xx){
+                let index = Math.floor(Math.random() * xx.length);
+                return xx[index];
+            }
+
+
+            let e = [2,4,5,6,8,10,11,13,21]
+            console.log(random_choice(e));
+            
+
+        </script>   
+    
+    </body>
+</html>
