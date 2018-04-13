@@ -1,0 +1,48 @@
+<html>
+    <body>
+        
+    <script>
+
+        // Basic 1 exercise//
+        // Creates variable x as empty array, then adds strings and removes the last string //
+
+        var x = []
+        console.log(x)
+        x.push("Coding", "Dojo", "Rocks")
+        console.log(x)
+        x.pop()
+        console.log(x)
+
+        // Basic 2 exercise//
+        // Creates constant y as empty array, then adds integer to the array //
+        const y = [];
+        y.push(88);
+        console.log(y);
+
+        // Basic 3 //
+        // Creates an array iterate and display each variable in the array //
+        var z = [9, 10, 6, 5, -1, 20, 13, 2];
+        for(let i = 0; i < z.length-1; i++){
+        console.log(z[i]);
+        }
+
+        // Basic 4 //
+        // Creates an array iterate and display each variable in the array //
+        var names = ['Kadie', 'Joe', 'Fritz', 'Pierre', 'Alphonso'];
+        for(let i = 0; i < names.length; i++){
+            if(names[i].length === 5) {
+                console.log(names[i]);
+            }
+        }
+
+        // Basic 5 //
+        // Creates a function and returns function //
+        function yell(string){
+            return string.toUpperCase();
+        }
+        console.log(yell("Hello World"));
+
+    </script>   
+    
+</body>
+</html>
