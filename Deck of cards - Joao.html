@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Deck of Cards</title>
+	<script type="text/javascript">
+
+	    class Deck {
+            constructor() {
+                this.deck = [];
+            }
+
+			reset() {
+                this.deck = [];
+                const suits = ["♣", "♥", "♦", "♠"];
+                const values = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+
+                for (const suit of suits){
+                    for (const value of values){
+                        this.deck.push(`${value}${suit}`);
+                    }
+                }
+
+				return this;
+			}
+
+            shuffle() {
+                let i = 0
+                let j = 0
+                let t = null
+
+                for (i = this.deck.length -1; i > 0; i -= 1) {
+                    j = Math.floor(Math.random()*(i+1));
+                    t = this.deck[i]
+                    this.deck[i] = this.deck[j]
+                    this.deck[j] = t
+                }
+                return this;
+            }
+
+            deal() {
+                return this.deck.pop();
+            }
+
+        }
+
+        class Player {
+            constructor(name) {
+                this.name = name;
+                this.hand = [];
+            }
+
+            draw(deck) {
+                this.hand.push(deck.deal());
+                return this;
+            }
+
+            discard() {
+                this.hand.pop();
+                return this;
+            }
+            
+        }
+
+        const deck2 = new Deck();
+        deck2.reset().shuffle();
+        console.log(deck2);
+
+        const player2 = new Player("Joao");
+        const player3 = new Player("Caio");
+        const player4 = new Player("House");
+
+        player2.draw(deck2).draw(deck2);
+        player3.draw(deck2).draw(deck2);
+        console.log(player2);
+        console.log(player3);
+
+        player4.draw(deck2).draw(deck2).draw(deck2);
+        
+        console.log(player4);
+        console.log(deck2);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
