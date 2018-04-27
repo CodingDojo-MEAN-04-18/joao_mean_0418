@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Class II</title>
+	<script type="text/javascript">
+
+	    class Ninja {
+            constructor (name) {
+                this.name = name;
+                this.health = 100;
+                var speed = 3;
+                var strength = 3;
+            }
+
+			showStats () {
+				console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`);
+			}
+            sayName () {
+			console.log(`My name is ${this.name}`);
+
+		    }
+            drinkSake (){
+                this.health += 10;
+                return this;
+            }
+            punch (ninja){
+			ninja.health -= 5;
+            console.log(`${ninja.name} was punched by ${this.name} and lost 5 Health!`);
+			return this;
+		    }
+            kick (ninja){
+			const damage = this.strength * 10
+            ninja.health -= damage;
+            console.log(`${ninja.name} was kicked by ${this.name} and lost ${damage} Health - that is lot of damage :)`);
+			return this;
+		    }
+		}
+
+		const blueNinja = new Ninja("Jiraiya");
+        const redNinja = new Ninja("Bill Gates");
+        blueNinja.strength = 10;
+        redNinja.strength = 3;
+        redNinja.punch(blueNinja);
+        blueNinja.kick(redNinja);
+        blueNinja.showStats();
+        redNinja.showStats();
+
+        class Sensei extends Ninja {
+            constructor(name) {
+                super(name);
+                this.speed = 10;
+                this.strength = 10;
+                this.wisdom = 10;
+                this.health = 200;
+            }
+
+            speakWisdom(){
+                super.drinkSake();
+                console.log("What one programmer can do in one month, \ntwo programmers can do in two months.");
+            }
+
+            showStats() {
+			    console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}, Wisdom: ${this.wisdom}`);
+		    }
+
+        }
+
+        const superSensei = new Sensei("Master Miagi");
+	    superSensei.speakWisdom();
+	    superSensei.showStats();
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
