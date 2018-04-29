@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dojoquery</title>
+    
+    <body>
+        
+        <button id="someButton">This is Some Button</button>
+            
+    </body>
+
+	<script type="text/javascript">
+
+        function $Dojo(id) {
+            this.myId = document.getElementById(id);
+
+            this.click = function (callback) {
+                this.myId.addEventListener("click", callback);
+            };
+
+            this.hover = function (hoverin, hoverout) {
+                this.myId.addEventListener("mouseover", hoverin);
+                this.myId.addEventListener("mouseout", hoverout);
+            };
+
+            return this;
+        }
+
+        $Dojo("someButton").click(function() { console.log("The button was clicked!") });
+        $Dojo("someButton").hover(function() { console.log("The button was hovered on!") });
+
+    </script>
+    
+    
+</head>
+</html>
