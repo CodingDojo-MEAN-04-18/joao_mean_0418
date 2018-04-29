@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fib Nacci</title>
+    
+    <body>
+        
+            
+    </body>
+
+	<script type="text/javascript">
+
+        function fib() {
+        // Some variables here
+            let prim = 0;
+            let segu = 1;
+
+            function nacci() {
+                console.log(segu);
+                const now = prim;
+                prim = segu;
+                segu = segu + now
+
+            // do something to those variables here
+            }
+            return nacci
+        }
+        
+        var fibCounter = fib();
+        fibCounter() // should console.log "1"
+        fibCounter() // should console.log "1"
+        fibCounter() // should console.log "2"
+        fibCounter() // should console.log "3"
+        fibCounter() // should console.log "5"
+        fibCounter() // should console.log "8"
+
+    </script>
+    
+    
+</head>
+</html>
