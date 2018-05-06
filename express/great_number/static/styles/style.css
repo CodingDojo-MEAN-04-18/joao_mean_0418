@@ -1,0 +1,13 @@
+#wrong {
+    height: 150px;
+    width: 150px;
+    font-weight: bold;
+    background-color: red;
+}
+
+#correct{
+    height: 150px;
+    width: 150px;
+    font-weight: bold;
+    background-color:rgb(8, 224, 8);
+} 

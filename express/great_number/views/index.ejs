@@ -1,0 +1,58 @@
+<!-- Great Number Game: Create a site that when a user loads it creates a random number between 1-100 and stores the number in session. Allow the user to guess at the number and tell them when they are too high or too low. If they guess the correct number tell them and offer to play again. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   
+    <!-- Bootstrap CSS Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    
+    <title>Great Number Game</title>
+
+</head>
+
+<body>
+<div class="container">
+
+    <!-- everything that goes in container  here -->
+
+    <h1 class="mb-3">Welcome to the Great Number Game!</h1>
+    
+    <h2>I am thinking of number between 1 and 100.</h2>
+    <h2 class="mb-2">Take a guess.</h2>
+    <!-- <p>the number is <%= curr %> </p> -->
+    <% if (state == "Too high" || state == "Too low") { %>
+        <div id="wrong" class="pt-5 mb-3">
+            <p class="text-center"><%= state %>!</p>
+        </div>
+    <% } else if (state == "correct")  { %>
+        <div id="correct" class="pt-5 mb-3"">
+            <p class="text-center"><%= curr %> was the number!</p>
+        </div>
+        <div>
+            <form action="/playagain" method="post">
+                <input class="btn btn-primary btn-lg" type="submit" value="Play Again?">
+            </form>
+        </div>
+    <% } %>
+    <% if (state !== "correct")  { %>
+        <form method="post" action="/process">
+            <div class="form-group">
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="guess">
+                <option value="empty">**Choose a number**</Enter></option>
+                <% for (let i = 1; i < 101; i++) {  %>
+                    <option guess=<%= i %></option><%= i %></option>
+                <% } %>
+                </select>
+            </div>
+            <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+        </form>
+    <% } %>
+</div> <!-- end container div -->
+</body>
+</html>
