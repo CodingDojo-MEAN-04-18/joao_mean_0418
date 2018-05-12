@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+
+        		// triggers the connection event in our server!
+						var socket = io.connect();
+
+            // submit data to the server using emit
+            $('#survey_form1').submit(function(e) {
+							e.preventDefault();
+							socket.emit("green")
+						});
+
+			$('#survey_form2').submit(function(e) {
+				e.preventDefault();
+				socket.emit("blue")
+			});
+
+			$('#survey_form3').submit(function(e) {
+							e.preventDefault();
+							socket.emit("pink")
+						});
+
+        		//display the emit response of the server 
+						socket.on('color', function (data){
+			   			$('#number').html("Your background color is : " + JSON.stringify(data.response));
+						});
+						
+		});
+		
+		
+		</script>
+		
+</head>
+<body>
+	<div id="number"></div>
+	<form action="" id="survey_form1">
+		<input type="submit" value="Green">
+	</form>
+	<form action="" id="survey_form2">
+		<input type="submit" value="Blue">
+	</form>
+	<form action="" id="survey_form3">
+		<input type="submit" value="Pink">
+	</form>
+
+</body>
+</html>
