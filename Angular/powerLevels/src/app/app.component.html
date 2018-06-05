@@ -1,0 +1,22 @@
+<div class="form">
+  <h1>Initial Power Level</h1>
+  <form (submit)="update()">
+    <input type="number" name="number" min="1" max="100" value="10" [(ngModel)]="power_level">
+    <input type="submit" value="Calculate Powers">
+  </form>
+</div>
+<div class="components">
+  <subcomponent title="HumanComponent" [power_level]="power_level">
+  </subcomponent>
+  <subcomponent title="SaiyanComponent" [power_level]="power_level * 10">
+  </subcomponent>
+  <subcomponent title="SupersaiyanComponent"
+  [power_level]="power_level * 90">
+  </subcomponent>
+  <subcomponent title="SuperSaiyanTwo"[power_level]="power_level * 150">
+  </subcomponent>
+  <subcomponent title="SuperSaiyanThree" [power_level]="power_level * 250">
+  </subcomponent>
+  <subcomponent title="SuperSaiyanFour"
+  [power_level]="power_level * 500"></subcomponent>
+</div>

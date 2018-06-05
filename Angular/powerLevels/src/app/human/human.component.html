@@ -1,0 +1,9 @@
+<div class="component">
+  <h2>{{ title }}</h2>
+  <p>
+    Power Level: {{ power_level }}
+  </p>
+  <p *ngIf="power_level >= 9000 && power_level < 20000" >Over 9000!</p>
+  <p *ngIf="power_level >= 20000 && power_level < 50000">Superlative!</p>
+  <p *ngIf="power_level >= 50000">The One!</p>
+</div>
